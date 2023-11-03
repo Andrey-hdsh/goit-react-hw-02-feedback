@@ -28,6 +28,7 @@ export class ContainerWidget extends Component {
   };
 
   render() {
+    
     return (
       <div>
         <Section title="Please leave feedback">
