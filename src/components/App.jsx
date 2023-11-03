@@ -1,16 +1,5 @@
+import { ContainerWidget } from './departures_widget';
+
 export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
+  return <ContainerWidget></ContainerWidget>;
 };
