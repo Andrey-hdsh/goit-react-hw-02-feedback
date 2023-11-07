@@ -13,11 +13,9 @@ export const Statistics = ({
       <StyledTextFeedback>Neutral: {neutral}</StyledTextFeedback>
       <StyledTextFeedback>Bad: {bad}</StyledTextFeedback>
       <StyledTextFeedback>Total: {total}</StyledTextFeedback>
-      {total > 0 && (
-        <StyledTextFeedback>
-          Positive feedback: {positivePercentage}%
-        </StyledTextFeedback>
-      )}
+      <StyledTextFeedback>
+        Positive feedback: {positivePercentage}%
+      </StyledTextFeedback>
     </>
   );
 };

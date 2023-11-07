@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import { Statistics } from './Statistics';
-import { FeedbackOptions } from './Button';
-import { Section } from './Section';
-import { Notification } from './Notification';
+import { Statistics } from './statistics';
+import { FeedbackOptions } from './button';
+import { Section } from './section';
+import { Notification } from './notification';
 
 export class ContainerWidget extends Component {
   state = {
@@ -28,7 +28,9 @@ export class ContainerWidget extends Component {
   };
 
   render() {
-    
+    const { good, neutral, bad } = this.state;
+    const total = this.countTotalFeedback();
+
     return (
       <div>
         <Section title="Please leave feedback">
@@ -38,18 +40,16 @@ export class ContainerWidget extends Component {
           />
         </Section>
         <Section title="Statistics">
-          {this.countTotalFeedback() > 0 && (
+          {total > 0 && (
             <Statistics
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
-              total={this.countTotalFeedback()}
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />
           )}
-          {this.countTotalFeedback() === 0 && (
-            <Notification message="There is no feedback" />
-          )}
+          {total === 0 && <Notification message="There is no feedback" />}
         </Section>
       </div>
     );
